@@ -3,13 +3,13 @@
 type ChatHeaderProps = {
   name: string;
   online: boolean;
-  
+  onBack: () =>void;
 };
 
 export default function ChatHeader({
   name,
   online,
-  
+  onBack,
 }: ChatHeaderProps) {
   const initials = name
     .split(" ")
@@ -24,7 +24,7 @@ export default function ChatHeader({
       {/* Mobile Back Button */}
       <button
         type="button"
-       
+        onClick={onBack}
         className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-gray-400 transition hover:bg-white/5 hover:text-white md:hidden"
         aria-label="Back to conversations"
       >
